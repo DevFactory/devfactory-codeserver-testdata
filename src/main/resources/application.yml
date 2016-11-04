@@ -1,0 +1,46 @@
+codeserver:
+    basePath: ${CODE_SERVER_STORAGE_BASE_PATH:./data}
+    repositoriesBasePath: ${codeserver.basePath}/caches/git/
+    repositoriesJson: ${codeserver.basePath}/repositories.json
+    repositoriesDownloadableExtension: zip
+    revisionsBasePath: ${codeserver.basePath}/revisions
+    revisionsJson: ${codeserver.basePath}/revisions.json
+    sourceapi:
+        url: ${CODESERVER_SOURCEAPI_URL:http://localhost:8082/}
+        ipc:
+            baseUrl: ${codeserver.sourceapi.url}/ipc/
+        rest:
+            baseUrl: ${codeserver.sourceapi.url}/api  
+            metadata:
+                generateViaGit: ${codeserver.sourceapi.rest.baseUrl}/generate-metadata/{projectId}/git
+                generateViaUpload: ${codeserver.sourceapi.rest.baseUrl}/generate-metadata/{projectId}/upload
+                downloadCodedb: ${codeserver.sourceapi.rest.baseUrl}/metadata/{projectId}?onlyDb=true
+            healthCheckUrl: ${codeserver.sourceapi.rest.baseUrl}/health
+    rest:
+        connection:
+            connection-request-timeout: 60000
+            connect-timeout: 120000
+            read-timeout: 60000
+    scmConfigs:
+        #This is just a sample, actual values will be passed from user overriden codeserver.yml 
+        -
+             host: http://www.scmurl.com
+             userName: someusername
+             password: somepassword
+spring:
+    profiles:
+        active: df-api,df-rest
+    jackson:
+        property-naming-strategy: SNAKE_CASE
+        date-format: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+        serialization:
+            WRITE_DATES_AS_TIMESTAMPS: false
+    http:
+        multipart:
+            max-file-size: 100MB
+            max-request-size: 1000MB
+logging:
+  file: ./codeserver.log
+  level:
+    com:
+      devfactory: INFO        
