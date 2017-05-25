@@ -1,6 +1,8 @@
 group 'com.devfactory.codeserver.monitor'
 version '1.0-SNAPSHOT'
 
+
+// Test
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
