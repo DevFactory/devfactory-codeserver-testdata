@@ -2,6 +2,10 @@ package com.devfactory.codeserver.monitor.salarycalculator;
 
  class Dummy {
  
-    //dummy content modified at 2017/06/28-20:33:24.586
+<<<<<<< HEAD
+    //dummy content modified at 2017/06/28-20:38:26.738
+=======
+    //dummy content modified at 2017/06/28-20:38:26.738
+>>>>>>> branch 'test-stg' of https://github.com/trilogy-group/devfactory-codeserver-testdata.git
  
  }
