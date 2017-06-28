@@ -3,9 +3,9 @@ package com.devfactory.codeserver.monitor.salarycalculator;
  class Dummy {
  
 <<<<<<< HEAD
-    //dummy content modified at 2017/06/28-22:35:50.719
+    //dummy content modified at 2017/06/28-22:39:08.263
 =======
-    //dummy content modified at 2017/06/28-22:35:50.719
+    //dummy content modified at 2017/06/28-22:39:08.263
 >>>>>>> branch 'test-stg' of https://github.com/trilogy-group/devfactory-codeserver-testdata.git
  
  }
